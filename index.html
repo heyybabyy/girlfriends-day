@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Girlfriend's Day, My Princess</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,500&family=Crimson+Pro:ital,wght@0,400;1,400&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy: #2A1B45;
+    --navy-deep: #170F28;
+    --cream: #F7EEE3;
+    --rose: #E3A8B0;
+    --rose-deep: #C77D8A;
+    --gold: #D9B26B;
+    --lavender: #9B93C4;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--navy-deep);
+    color:var(--cream);
+    font-family:'Jost', sans-serif;
+    overflow-x:hidden;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    background:radial-gradient(ellipse at 50% 20%, #3D2A63 0%, var(--navy) 45%, var(--navy-deep) 100%);
+    overflow:hidden;
+    padding:2rem 1.5rem;
+  }
+  .stars{position:absolute; inset:0; z-index:0;}
+  .star{
+    position:absolute;
+    background:var(--cream);
+    border-radius:50%;
+    opacity:.7;
+    animation:twinkle 4s ease-in-out infinite;
+  }
+  @keyframes twinkle{
+    0%,100%{opacity:.25; transform:scale(1);}
+    50%{opacity:.95; transform:scale(1.4);}
+  }
+
+  .eyebrow{
+    font-family:'Jost', sans-serif;
+    letter-spacing:.35em;
+    text-transform:uppercase;
+    font-size:.72rem;
+    color:var(--lavender);
+    z-index:2;
+    margin-bottom:1.4rem;
+  }
+  .headline{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:600;
+    font-size:clamp(2.6rem, 7vw, 5.2rem);
+    line-height:1.05;
+    z-index:2;
+    color:var(--cream);
+  }
+  .headline em{
+    font-style:italic;
+    color:var(--rose);
+  }
+  .subline{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:clamp(1.1rem, 2.4vw, 1.5rem);
+    color:var(--cream);
+    opacity:.85;
+    margin-top:1.3rem;
+    z-index:2;
+    max-width:32ch;
+  }
+
+  /* signature element: the connecting line between two stars/points, "you" and "me" */
+  .constellation{
+    position:relative;
+    width:min(90vw, 640px);
+    height:120px;
+    margin-top:3rem;
+    z-index:2;
+  }
+  .constellation svg{width:100%; height:100%; overflow:visible;}
+  .conn-path{
+    fill:none;
+    stroke:var(--gold);
+    stroke-width:1.2;
+    stroke-dasharray:4 6;
+    opacity:.55;
+    animation:dash 6s linear infinite;
+  }
+  @keyframes dash{ to{ stroke-dashoffset:-100; } }
+  .point{
+    fill:var(--rose);
+    animation:pulse 2.6s ease-in-out infinite;
+  }
+  .point.me{ fill:var(--gold); animation-delay:1.3s; }
+  @keyframes pulse{
+    0%,100%{ r:4.5; opacity:.8; }
+    50%{ r:7; opacity:1; }
+  }
+  .point-label{
+    font-family:'Jost', sans-serif;
+    font-size:.68rem;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    fill:var(--cream);
+    opacity:.6;
+  }
+
+  .countdown{
+    z-index:2;
+    margin-top:2.6rem;
+    text-align:center;
+  }
+  .countdown-label{
+    font-size:.68rem;
+    letter-spacing:.28em;
+    text-transform:uppercase;
+    color:var(--lavender);
+    margin-bottom:.9rem;
+  }
+  .countdown-row{
+    display:flex;
+    gap:clamp(.9rem, 3vw, 1.8rem);
+    justify-content:center;
+  }
+  .countdown-unit{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    min-width:56px;
+  }
+  .countdown-num{
+    font-family:'Cormorant Garamond', serif;
+    font-weight:600;
+    font-size:clamp(1.8rem, 4vw, 2.6rem);
+    color:var(--gold);
+    line-height:1;
+  }
+  .countdown-unit-label{
+    font-size:.62rem;
+    letter-spacing:.2em;
+    text-transform:uppercase;
+    color:var(--cream);
+    opacity:.6;
+    margin-top:.4rem;
+  }
+
+  .scroll-cue{
+    position:absolute;
+    bottom:2.2rem;
+    z-index:2;
+    font-size:.7rem;
+    letter-spacing:.3em;
+    text-transform:uppercase;
+    color:var(--lavender);
+    opacity:.7;
+    animation:bob 2.4s ease-in-out infinite;
+  }
+  @keyframes bob{
+    0%,100%{ transform:translateY(0); }
+    50%{ transform:translateY(8px); }
+  }
+
+  /* ---------- LETTER ---------- */
+  .letter-wrap{
+    background:var(--navy-deep);
+    padding:6rem 1.5rem 7rem;
+    display:flex;
+    justify-content:center;
+  }
+  .letter{
+    max-width:640px;
+    width:100%;
+    background:var(--cream);
+    color:#2b2620;
+    border-radius:3px;
+    padding:clamp(2.2rem, 6vw, 4rem);
+    box-shadow:0 30px 80px rgba(0,0,0,.45);
+    position:relative;
+    opacity:0;
+    transform:translateY(40px);
+    transition:opacity 1s ease, transform 1s ease;
+  }
+  .letter.visible{ opacity:1; transform:translateY(0); }
+  .letter::before{
+    content:"";
+    position:absolute;
+    top:0; left:0; right:0;
+    height:6px;
+    background:linear-gradient(90deg, var(--rose-deep), var(--gold));
+  }
+  .letter-eyebrow{
+    font-family:'Jost', sans-serif;
+    font-size:.68rem;
+    letter-spacing:.3em;
+    text-transform:uppercase;
+    color:var(--rose-deep);
+    margin-bottom:1.6rem;
+  }
+  .letter p{
+    font-family:'Crimson Pro', serif;
+    font-style:italic;
+    font-size:clamp(1.05rem, 2vw, 1.22rem);
+    line-height:1.85;
+    margin-bottom:1.35rem;
+    color:#332c24;
+  }
+  .letter p:first-of-type::first-letter{
+    font-family:'Cormorant Garamond', serif;
+    font-style:normal;
+    font-size:3.4rem;
+    line-height:.75;
+    float:left;
+    margin-right:.12em;
+    margin-top:.08em;
+    color:var(--rose-deep);
+  }
+  .signoff{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:1.4rem;
+    margin-top:2.2rem;
+    color:var(--rose-deep);
+  }
+
+  /* ---------- CLOSING ---------- */
+  .closing{
+    background:var(--navy-deep);
+    text-align:center;
+    padding:0 1.5rem 6rem;
+  }
+  .closing-title{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:clamp(1.4rem, 3vw, 2rem);
+    color:var(--cream);
+    max-width:24ch;
+    margin:0 auto 1rem;
+    line-height:1.4;
+  }
+  .closing-sub{
+    font-size:.78rem;
+    letter-spacing:.25em;
+    text-transform:uppercase;
+    color:var(--lavender);
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .star, .conn-path, .point, .scroll-cue{ animation:none !important; }
+  }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="stars" id="stars"></div>
+
+  <p class="eyebrow">Happy Girlfriend's Day</p>
+  <h1 class="headline">For my <em>princess</em>,<br>my favorite person<br>on the other side of the nigeria</h1>
+  <p class="subline">However many miles it is today, it's never too many for how much I love you.</p>
+
+  <div class="constellation">
+    <svg viewBox="0 0 400 120" preserveAspectRatio="xMidYMid meet">
+      <path class="conn-path" d="M40,80 Q200,10 360,80"></path>
+      <circle class="point" cx="40" cy="80" r="5"></circle>
+      <text class="point-label" x="40" y="105" text-anchor="middle">you</text>
+      <circle class="point me" cx="360" cy="80" r="5"></circle>
+      <text class="point-label" x="360" y="105" text-anchor="middle">me</text>
+    </svg>
+  </div>
+
+  <div class="countdown" id="countdown">
+    <p class="countdown-label"></p>
+    <div class="countdown-row">
+      <div class="countdown-unit"><span class="countdown-num" id="cd-days">00</span><span class="countdown-unit-label">days</span></div>
+      <div class="countdown-unit"><span class="countdown-num" id="cd-hours">00</span><span class="countdown-unit-label">hrs</span></div>
+      <div class="countdown-unit"><span class="countdown-num" id="cd-mins">00</span><span class="countdown-unit-label">min</span></div>
+      <div class="countdown-unit"><span class="countdown-num" id="cd-secs">00</span><span class="countdown-unit-label">sec</span></div>
+    </div>
+  </div>
+
+  <p class="scroll-cue">read your letter ↓</p>
+</section>
+
+<section class="letter-wrap">
+  <article class="letter" id="letter">
+    <p class="letter-eyebrow">A letter for you</p>
+
+    <p>My princess,</p>
+
+    <p>There's a version of today that most couples get to spend curled up on the same couch, and I won't pretend I don't wish that were us. Instead I'm sending this across however many miles  separate us right now, hoping it lands right when you need it, which is exactly the story of us, isn't it — always reaching a little further than the distance wants to allow.</p>
+
+    <p>Long distance was never the plan, it was just the price of finding you first and everything else second. There have been nights that felt impossibly long, calls that dropped at the worst moment, and days I wanted nothing more than to just show up at your door instead of your screen. We haven't even gotten to hug yet, and somehow you still feel like the most familiar, most home feeling I have.</p>
+
+    <p>So today isn't about pretending the hard parts away. It's about telling you plainly: you make the waiting worth it. Every rough patch, every mismatched time zone, every "I miss you" typed out at 2am has only ever proven how much I mean this. You are patient with me in ways I don't always deserve, and steady in ways that keep me steady too.</p>
+
+    <p>Happy Girlfriend's Day, my love. Thank you for choosing this hard, beautiful, long-distance kind of love with me. I am counting down to the day there's no ocean, no flight, no screen between us — just you, me, and finally, no more goodnight calls instead of goodnight kisses.</p>
+    <p>🤣🤣🤣 i almost forgot about how we sleep on the call, one of my favorite memories</p>
+    <p>uhmmmm i dont have any abuja vendor(yeah i know if he wanted to he would search, well activities of this week got me messed up), so what do you want</p>
+
+    <p class="signoff">Yours, across every mile </p>
+  </article>
+</section>
+
+<section class="closing">
+  <p class="closing-title">Same sky. Same heart. Just a little more patience until we're standing under it together.</p>
+  <p class="closing-sub">Forever yours(although i woke up to something very disturbing)</p>
+</section>
+
+<script>
+  const starField = document.getElementById('stars');
+  const starCount = 90;
+  for(let i=0;i<starCount;i++){
+    const s = document.createElement('div');
+    s.className = 'star';
+    const size = Math.random()*2 + 1;
+    s.style.width = size+'px';
+    s.style.height = size+'px';
+    s.style.left = Math.random()*100+'%';
+    s.style.top = Math.random()*80+'%';
+    s.style.animationDelay = (Math.random()*4)+'s';
+    s.style.animationDuration = (3+Math.random()*3)+'s';
+    starField.appendChild(s);
+  }
+
+  function getNextSept4(){
+    const now = new Date();
+    let target = new Date(now.getFullYear(), 8, 4, 0, 0, 0);
+    if(target < now){
+      target = new Date(now.getFullYear()+1, 8, 4, 0, 0, 0);
+    }
+    return target;
+  }
+  function updateCountdown(){
+    const target = getNextSept4();
+    const now = new Date();
+    let diff = target - now;
+    if(diff < 0) diff = 0;
+    const days = Math.floor(diff / (1000*60*60*24));
+    const hours = Math.floor((diff / (1000*60*60)) % 24);
+    const mins = Math.floor((diff / (1000*60)) % 60);
+    const secs = Math.floor((diff / 1000) % 60);
+    document.getElementById('cd-days').textContent = String(days).padStart(2,'0');
+    document.getElementById('cd-hours').textContent = String(hours).padStart(2,'0');
+    document.getElementById('cd-mins').textContent = String(mins).padStart(2,'0');
+    document.getElementById('cd-secs').textContent = String(secs).padStart(2,'0');
+  }
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+
+  const letter = document.getElementById('letter');
+  const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        letter.classList.add('visible');
+        observer.disconnect();
+      }
+    });
+  }, { threshold: 0.2 });
+  observer.observe(letter);
+</script>
+
+</body>
+</html>
